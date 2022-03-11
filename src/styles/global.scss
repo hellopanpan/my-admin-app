@@ -1,0 +1,129 @@
+/*
+ * @Description: app.scss里包含一些可能会影响页面样式的代码，故将一些公共组件的样式放在这里
+ */
+.v-empty-result-container {
+  @include all-center();
+  // 用于表示列表为空/搜索结果为空的图片的宽高
+  .v-empty-image {
+    width: 420px;
+    height: 130px;
+  }
+
+  .v-empty-text {
+    margin-top: 14px;
+    color: #999;
+    font-size: 28px;
+  }
+}
+
+.v-picker-item {
+  display: flex;
+  align-content: center;
+  padding: 34px 0;
+  @include borderBottom;
+  &__left-part {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    &__label {
+      @include listItemText;
+    }
+  }
+  &__right-part {
+    flex: 3;
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+    // &.has-picked {
+    // }
+    &__placeholder {
+      @include placeholderText;
+    }
+    &__value {
+      @include listItemText;
+    }
+    .at-icon {
+      color: $grayText;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.v-page-wrapper {
+  padding: 0 30px;
+}
+
+.pop-call {
+  .at-list {
+    padding-bottom: 80px;
+  }
+
+  .at-list__item {
+    padding: 24px 20px;
+
+    .item-content__info-title {
+      color: #333;
+      line-height: 42px;
+      font-weight: 600;
+    }
+    .item-content__info-note {
+      font-size: 24px;
+    }
+    .item-extra__icon-arrow {
+      background-image: url(~@/assets/img/tel-list.png);
+      background-size: cover;
+      width: 60px;
+      height: 60px;
+    }
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.ellipsis {
+  @include ellipsis();
+}
+
+.clearfix:after {
+  content: '.';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.page-padding {
+  @include page-padding;
+}
+
+/* 底部悬浮按钮 start */
+.f-bottom-float-btn-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px 30px 40px;
+  z-index: 2;
+  background-color: #fff;
+
+  .f-bottom-float-btn {
+    margin: 0; // remove default
+  }
+}
+
+@supports (bottom: constant(safe-area-inset-bottom)) or
+  (bottom: env(safe-area-inset-bottom)) {
+  .f-bottom-float-btn-container {
+    padding-bottom: calc(40px + constant(safe-area-inset-bottom));
+    padding-bottom: calc(40px + env(safe-area-inset-bottom));
+  }
+}
+/* 底部悬浮按钮 end */
+
+.f-border-bottom {
+  @include border-bottom;
+}

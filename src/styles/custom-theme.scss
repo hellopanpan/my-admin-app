@@ -1,0 +1,157 @@
+@import '~taro-ui/dist/style/index.scss';
+
+/* reset AtList start*/
+.at-list {
+  &::after {
+    display: none;
+  }
+
+  &__item {
+    padding: 35px 30px;
+
+    &::after {
+      right: 30px;
+    }
+
+    &--thumb .item-thumb {
+      margin-right: 10px;
+      width: 30px;
+      height: 30px;
+      font-size: 0;
+    }
+
+    .item-content__info-title {
+      font-size: 28px;
+      font-weight: 400;
+      color: rgba(153, 153, 153, 1);
+      line-height: 32px;
+    }
+
+    .item-extra__icon {
+      right: 0;
+
+      &-arrow {
+        width: 14px;
+        height: 24px;
+        background-image: url(../assets/img/list-arrow.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-size: 0;
+      }
+    }
+  }
+}
+/* reset AtList end*/
+
+/* reset AtGrid start*/
+.at-grid {
+  padding: 32px 30px;
+
+  &__flex {
+    .content-inner__img {
+      width: 80px;
+      height: 80px;
+    }
+
+    .content-inner__text {
+      margin-top: 20px;
+      font-size: 28px;
+      font-weight: 500;
+      color: rgba(0, 0, 2, 1);
+      line-height: 40px;
+    }
+  }
+}
+/* reset AtGrid end */
+
+/* reset AtModel start */
+.at-modal {
+  &__container {
+    border-radius: 20px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center; // 垂直居中文本，单行两行都需要
+    box-sizing: border-box;
+    padding: 40px;
+    text-align: center;
+    font-size: 32px;
+    color: #666;
+  }
+
+  &__footer .at-modal__action > button {
+    font-size: 32px;
+    color: rgba(153, 153, 153, 1);
+  }
+}
+/* reset AtModel end */
+
+/* reset AtInput start */
+.at-input {
+  margin-left: 0;
+  padding: 34px 0;
+
+  &__title {
+    width: 230px;
+    font-size: 28px;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    line-height: 42px;
+
+    &--required {
+      &::before {
+        margin-right: 0;
+      }
+    }
+  }
+
+  input {
+    font-size: 28px;
+    color: rgba(51, 51, 51, 1);
+    text-align: right;
+  }
+
+  &__children {
+    &::after {
+      display: none;
+    }
+  }
+  &:after {
+    border-color: #eee;
+  }
+}
+/* reset AtInput end */
+
+/* reset AtButton start*/
+.at-button {
+  height: 88px; // todo: 提取成变量，因为别的地方也依赖了这个高度
+  border-radius: 10px;
+  font-size: 32px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  line-height: 88px;
+
+  &--primary {
+    color: rgba(255, 255, 255, 1);
+  }
+}
+/* reset AtButton start*/
+
+/* reset AtFloatLayout start*/
+.at-float-layout {
+  &__container {
+    border-radius: 20px 20px 0px 0px;
+    min-height: auto;
+  }
+
+  .layout-body {
+    padding: 40px 30px;
+    min-height: auto;
+
+    &__content {
+      min-height: auto;
+    }
+  }
+}
+/* reset AtFloatLayout start*/

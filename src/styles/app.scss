@@ -1,0 +1,109 @@
+
+page {
+  font-family: PingFang SC, Arial, '微软雅黑', simsun, Helvetica, sans-serif;
+  box-sizing: border-box;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.flex {
+  display: flex !important;
+  flex-wrap: wrap;
+}
+.flex > .cell {
+  flex: 1;
+  width: 0;
+  flex-basis: 0;
+  max-width: 100%;
+}
+
+.v-tag {
+  display: inline-block;
+  padding: 0 8px;
+  height: 32px;
+  line-height: 32px;
+  background: rgba(216, 220, 223, 0.2);
+  border-radius: 2px;
+  /* prettier-ignore */
+  font-size: 9PX;
+  font-weight: 400;
+  color: rgba(158, 168, 175, 1);
+  text-align: center;
+  box-sizing: border-box;
+  vertical-align: middle;
+
+  &.rounded {
+    border-radius: 16px;
+  }
+
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  &.red {
+    color: #fd5544;
+    background-color: #fee7e5;
+  }
+
+  &--onsale {
+    background: rgba(119, 187, 132, 1);
+    border-radius: 2px;
+    font-size: 24px;
+    color: rgba(255, 255, 255, 1);
+  }
+
+  &__ellipsis {
+    color: #999;
+  }
+}
+
+.g-pannel {
+  margin: 20px 20px 0;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+
+  &_head {
+    font-size: 40px;
+    font-weight: 500;
+    color: rgba(51, 51, 51, 1);
+    line-height: 60px;
+  }
+}
+
+// AtListItem wider value
+.g-wider-value {
+  .at-list__item-extra {
+    max-width: 500px;
+  }
+}
+
+// AtListItem wider label
+.g-wider-label {
+  .at-input__title {
+    width: 240rpx !important;
+  }
+}
+
+// AtListItem disabled
+.g-amend-disabled {
+  .at-input--disabled {
+    opacity: 1;
+    .at-input__title {
+      color: #333333;
+    }
+    .at-input__input {
+      color: #999999;
+    }
+  }
+}
+
+// AtModal multi line
+.g-modal-multi-line {
+  text {
+    line-height: 50rpx !important;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 14rpx;
+  }
+}

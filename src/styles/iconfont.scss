@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'icon2018';
+  src: url('https://t.focus-res.cn/front-end/icon2018/iconfont.ttf?t=1539342297740')
+      format('truetype'),
+    /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+      url('https://t.focus-res.cn/front-end/icon2018/iconfont.svg?t=1539342297740#icon2018')
+      format('svg'); /* iOS 4.1- */
+}
+
+.icon2018 {
+  display: inline-block; // todo: Is it ok in all case?
+  font-family: 'icon2018' !important;
+  font-size: 32px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &.icon-close::after {
+    content: '\e914';
+  }
+}

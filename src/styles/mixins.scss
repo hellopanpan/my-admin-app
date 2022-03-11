@@ -1,0 +1,94 @@
+@mixin page-padding {
+  padding: 0 30px;
+}
+
+@mixin page-margin {
+  margin: 0 30px;
+}
+
+@mixin verticalCenter() {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin borderBottom {
+  border-bottom: 1px solid #eee;
+}
+
+@mixin listItemText {
+  color: #333;
+  font-size: 28px;
+}
+
+@mixin placeholderText {
+  color: $grayText;
+  font-size: 28px;
+}
+
+@mixin ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@mixin all-center {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@mixin absolute-right-center {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin page-common-layout {
+  padding: 0 30px;
+}
+
+// 多行省略号，适用于移动端webkit内核的浏览器
+@mixin poly-line-ellipsis($lineNum) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $lineNum;
+  // todo: 注意，必须加下面这行comment才能生效
+  /*! autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
+  // box-orient: vertical;
+}
+
+@mixin screen-safe-area($raw-padding-bottom: 120px) {
+  @supports (bottom: constant(safe-area-inset-bottom)) or
+    (bottom: env(safe-area-inset-bottom)) {
+    page {
+      // todo: 对page使用变量不生效？
+      // padding-bottom: calc(
+      //   $raw-padding-bottom + constant(safe-area-inset-bottom)
+      // );
+      padding-bottom: constant(safe-area-inset-bottom);
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+  }
+}
+
+/* 1px border start */
+@mixin border-bottom {
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    /* prettier-ignore */
+    height: 1PX;
+    transform: scaleY(0.5);
+    background-color: #eee;
+  }
+}
+/* 1px border end */
