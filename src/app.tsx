@@ -6,31 +6,27 @@ import dva from './utils/dva'
 import models from './models/index'
 
 import './app.scss'
+import 'taro-ui/dist/style/index.scss'
 
 const dvaApp = dva.createApp({
   initialState: {},
-  models: models,
+  models: models
 })
 const store = dvaApp.getStore()
 
 class App extends Component {
+  componentDidMount() {}
 
-  componentDidMount () {}
+  componentDidShow() {}
 
-  componentDidShow () {}
+  componentDidHide() {}
 
-  componentDidHide () {}
-
-  componentDidCatchError () {}
+  componentDidCatchError() {}
 
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
-  render () {
-    return (
-      <Provider store={store}>
-        {this.props.children}
-      </Provider>
-    )
+  render() {
+    return <Provider store={store}>{this.props.children}</Provider>
   }
 }
 

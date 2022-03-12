@@ -3,7 +3,13 @@ export default {
     request: 10000, // ms
     uploadFile: 10000 // 防止上传大图片时耗时太久影响用户体验
   },
-  pages: ['pages/index/index', 'pages/login/index', 'pages/mine/index'],
+  pages: [
+    'pages/login/index',
+    'pages/index/index',
+    'pages/main/index',
+    'pages/addProduct/index',
+    'pages/mine/index'
+  ],
   // subPackages: [
   //   {
   //     root: 'pages/common/',
@@ -19,13 +25,13 @@ export default {
     selectedColor: '#FD5544',
     list: [
       {
-        pagePath: 'pages/index/index',
+        pagePath: 'pages/main/index',
         text: '首页',
         iconPath: './assets/img/tabbar/index.png',
         selectedIconPath: './assets/img/tabbar/index_active.png'
       },
       {
-        pagePath: 'pages/login/index',
+        pagePath: 'pages/mine/index',
         text: '我的',
         iconPath: './assets/img/tabbar/mine.png',
         selectedIconPath: './assets/img/tabbar/mine_active.png'
